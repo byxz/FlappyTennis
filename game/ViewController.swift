@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var bird: Bird!
     var timer: Timer!
     var fire: Bird!
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupScene()
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        bird.direction = bird.direction == .right ? .left : .right
+        //bird.direction = bird.direction == .right ? .left : .right
+        bird.fire()
     }
 }

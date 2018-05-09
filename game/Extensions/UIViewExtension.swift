@@ -30,7 +30,7 @@ extension UIView {
     func createFireBall() -> UIImageView {
         
         let sizeBall = (wight: 40, height: 40)
-        let createPoint = (x: 100, y: 100)
+        let createPoint = (x: 50, y: 1)
         let rect = CGRect(x: createPoint.x, y: createPoint.y, width: sizeBall.wight, height: sizeBall.height)
         
         let fireBall = UIImageView(frame: rect)

@@ -23,7 +23,7 @@ class Bird: UIImageView {
     
     
     let closure = {
-       
+        
     }
     
     static func addBird(view: UIView) -> Bird {
@@ -68,32 +68,22 @@ class Bird: UIImageView {
         }
     }
     
-    func fire(array: [Bird] ) -> String {
-        
-        if array.isEmpty {
+    func fire() {
+        if arrayOfBall.isEmpty {
             print("Error")
+            print("Нет залпов")
         } else {
-            addSubview(self)
+            let ball = arrayOfBall.first
+            ball?.frame.origin.x = 50
+            
+            UIView.animate(withDuration: 1, animations: {
+                ball?.frame.origin.x = 100
+            }) { (finished: Bool) in
+                ball?.removeFromSuperview()
+                self.arrayOfBall.removeLast()
+                print("Осталось \(self.arrayOfBall.count) залп(ов)")
+            }
+            addSubview(ball!)
         }
-        return "Осталось \(array.count) залп(ов)"
-    }
-    
-    //
-    //Функция удалить
-    //
-    
-    
-    func addArrayBall() -> [UIImageView] {
-        var fireBall: [UIImageView] = []
-        
-        for _ in 0...10 {
-            fireBall.append(createFireBall())
-        }
-        return fireBall
     }
 }
-
-
-
-
-
