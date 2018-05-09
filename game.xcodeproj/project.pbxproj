@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04729CE320A32ECC00E1B6D8 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04729CE220A32ECC00E1B6D8 /* Cloud.swift */; };
 		048E7BF52094AE5A00CE35DA /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E7BF42094AE5A00CE35DA /* UIViewExtension.swift */; };
 		049385FF209F7E0E00136360 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049385FE209F7E0E00136360 /* File.swift */; };
 		049FDB9A20923410008B6F32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049FDB9920923410008B6F32 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04729CE220A32ECC00E1B6D8 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
 		048E7BF42094AE5A00CE35DA /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		049385FE209F7E0E00136360 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		049FDB9620923410008B6F32 /* game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				049FDBAE20923763008B6F32 /* Rocket.swift */,
 				049FDBB02092376E008B6F32 /* Sprite.swift */,
 				049FDBB42092378D008B6F32 /* Coin.swift */,
+				04729CE220A32ECC00E1B6D8 /* Cloud.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				049FDBB12092376E008B6F32 /* Sprite.swift in Sources */,
 				049FDBAD209235BF008B6F32 /* Bird.swift in Sources */,
 				049FDB9A20923410008B6F32 /* AppDelegate.swift in Sources */,
+				04729CE320A32ECC00E1B6D8 /* Cloud.swift in Sources */,
 				049385FF209F7E0E00136360 /* File.swift in Sources */,
 				049FDBAF20923763008B6F32 /* Rocket.swift in Sources */,
 				048E7BF52094AE5A00CE35DA /* UIViewExtension.swift in Sources */,
@@ -330,7 +334,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = testid.game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -348,7 +352,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = testid.game;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

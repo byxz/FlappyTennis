@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var bird: Bird!
     var timer: Timer!
     var fire: Bird!
+    var cloud: Cloud!
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -24,12 +25,16 @@ class ViewController: UIViewController {
     }
     
     func setupScene() {
+        view.backgroundColor = #colorLiteral(red: 0.1844131092, green: 0.9754205244, blue: 1, alpha: 1)
+        
         bird = Bird.addBird(view: view)
         bird.add(to: view)
         rocketRight = Rocket.addRocket(view: view, type: Rocket.rocketType.right)
         rocketRight.add(to: view)
         rocketLeft = Rocket.addRocket(view: view, type: Rocket.rocketType.left)
         rocketLeft.add(to: view)
+        cloud = Cloud.addCloud(view: view)
+        cloud.add(to: view)
     }
     
     func runTimer() {
@@ -40,6 +45,7 @@ class ViewController: UIViewController {
     
     func timerTick() {
         bird.move()
+        cloud.move()
         rocketLeft.move(rocket: rocketLeft)
         rocketRight.move(rocket: rocketRight)
         rocketLeft.intersectionWithRockets(view: bird)
