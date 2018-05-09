@@ -10,7 +10,6 @@ import UIKit
 
 class Rocket: UIImageView {
     
-    //comment
     var movingDirectionForRocketLeft: Direction = .up
     var movingDirectionForRocketRight: Direction = .down
     
