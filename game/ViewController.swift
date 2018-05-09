@@ -16,7 +16,12 @@ class ViewController: UIViewController {
     @IBAction func startGameButton(_ sender: UIButton) {
         startGame()
         sender.isHidden = true
+        scoreImage.isHidden = false
     }
+    @IBOutlet weak var startGameOutlet: UIButton!
+    @IBOutlet weak var scoreImage: UIImageView!
+    
+    
     
     var bird: Bird!
     var timer: Timer!
@@ -25,6 +30,9 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        scoreImage.isHidden = true
+        scoreImage.image = UIImage(named: "number-0")
     }
     
     func startGame() {
@@ -62,6 +70,8 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //bird.direction = bird.direction == .right ? .left : .right
-        bird.fire()
+        if startGameOutlet.isHidden {
+            bird.fire()
+        }
     }
 }
