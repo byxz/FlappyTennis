@@ -13,6 +13,11 @@ var rocketRight: Rocket!
 
 class ViewController: UIViewController {
     
+    @IBAction func startGameButton(_ sender: UIButton) {
+        startGame()
+        sender.isHidden = true
+    }
+    
     var bird: Bird!
     var timer: Timer!
     var fire: Bird!
@@ -20,6 +25,9 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    func startGame() {
         setupScene()
         runTimer()
     }
