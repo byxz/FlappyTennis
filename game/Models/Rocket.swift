@@ -25,7 +25,7 @@ class Rocket: UIImageView {
         
         switch type {
         case .left:
-            rect = CGRect(x: 1, y: 1, width: sizeRocket.wight, height: sizeRocket.height)
+            rect = CGRect(x: -5, y: 1, width: sizeRocket.wight, height: sizeRocket.height)
         case .right:
             rect = CGRect(x: Int(view.frame.width - CGFloat(sizeRocket.wight)), y: Int(view.frame.height - CGFloat(sizeRocket.height)), width: sizeRocket.wight, height: sizeRocket.height)
         }

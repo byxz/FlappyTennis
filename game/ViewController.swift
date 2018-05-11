@@ -13,14 +13,7 @@ var rocketRight: Rocket!
 
 class ViewController: UIViewController {
     
-    @IBAction func startGameButton(_ sender: UIButton) {
-        startGame()
-        sender.isHidden = true
-        scoreImage.isHidden = false
-    }
-    @IBOutlet weak var startGameOutlet: UIButton!
     @IBOutlet weak var scoreImage: UIImageView!
-    
     
     
     var bird: Bird!
@@ -28,11 +21,15 @@ class ViewController: UIViewController {
     var fire: Bird!
     var cloud: Cloud!
     
+    
+    override func viewDidLoad() {
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        scoreImage.isHidden = true
-        scoreImage.image = UIImage(named: "number-0")
+        startGame()
     }
     
     func startGame() {
@@ -70,8 +67,6 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //bird.direction = bird.direction == .right ? .left : .right
-        if startGameOutlet.isHidden {
-            bird.fire()
-        }
+        bird.fire()
     }
 }

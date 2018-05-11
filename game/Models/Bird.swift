@@ -22,8 +22,8 @@ class Bird: UIImageView {
     }()
     
     
-    let closure = {
-        
+    let closure: (Int) -> Void = { someValue in
+        print("closure",  someValue)
     }
     
     static func addBird(view: UIView) -> Bird {
@@ -72,18 +72,18 @@ class Bird: UIImageView {
         if arrayOfBall.isEmpty {
             print("Error")
             print("Нет залпов")
-        } else {
-            let ball = arrayOfBall.first
-            ball?.frame.origin.x = 50
-            
-            UIView.animate(withDuration: 1, animations: {
-                ball?.frame.origin.x = 100
-            }) { (finished: Bool) in
-                ball?.removeFromSuperview()
-                self.arrayOfBall.removeLast()
-                print("Осталось \(self.arrayOfBall.count) залп(ов)")
-            }
-            addSubview(ball!)
+            return
         }
+        closure(arrayOfBall.count)
+        let ball = arrayOfBall.last
+        self.arrayOfBall.removeLast()
+        ball?.frame.origin.x = 50
+        
+        UIView.animate(withDuration: 1, animations: {
+            ball?.frame.origin.x = 100
+        }) { (finished: Bool) in
+            ball?.removeFromSuperview()
+        }
+        addSubview(ball!)
     }
 }
