@@ -68,16 +68,16 @@ class Bird: UIImageView {
         }
     }
     
-    func fire() {
+    func fire(closure: (Int) -> Void) {
         if arrayOfBall.isEmpty {
             print("Error")
             print("Нет залпов")
             return
         }
-        closure(arrayOfBall.count)
         let ball = arrayOfBall.last
         self.arrayOfBall.removeLast()
         ball?.frame.origin.x = 50
+        print(closure(arrayOfBall.count))
         
         UIView.animate(withDuration: 1, animations: {
             ball?.frame.origin.x = 100
