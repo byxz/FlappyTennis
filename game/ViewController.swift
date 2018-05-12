@@ -67,6 +67,12 @@ class ViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //bird.direction = bird.direction == .right ? .left : .right
-        bird.fire()
+        /*
+         
+         bird.fire { (<#Int#>) in
+         <#code#>
+         
+         }
+         */
     }
 }
