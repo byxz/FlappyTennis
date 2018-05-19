@@ -21,11 +21,6 @@ class Bird: UIImageView {
         return arrayOfBall
     }()
     
-    
-    let closure: (Int) -> Void = { someValue in
-        print("closure",  someValue)
-    }
-    
     static func addBird(view: UIView) -> Bird {
         
         let rect = CGRect(x: 100, y: 100, width: 50, height: 50)
@@ -68,7 +63,7 @@ class Bird: UIImageView {
         }
     }
     
-    func fire(closure: (Int) -> Void) {
+    func fire(completion: (Int) -> Void) {
         if arrayOfBall.isEmpty {
             print("Error")
             print("Нет залпов")
@@ -76,8 +71,9 @@ class Bird: UIImageView {
         }
         let ball = arrayOfBall.last
         self.arrayOfBall.removeLast()
+        completion(arrayOfBall.count)
         ball?.frame.origin.x = 50
-        print(closure(arrayOfBall.count))
+        //print(closure(arrayOfBall.count))
         
         UIView.animate(withDuration: 1, animations: {
             ball?.frame.origin.x = 100
